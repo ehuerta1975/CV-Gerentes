@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efecto cascada del bono — Gerentes (Grupo 2) — Compensación variable 2026</title>
+<style>
+/* ============================================================
+   ESCALA — tokens (colors_and_type.css, subset autocontenido)
+   ============================================================ */
+:root{
+  --escala-orange:#DB4426;
+  --escala-orange-700:#B8351B;
+  --escala-orange-100:#FBEDE9;
+  --brand-deep-blue:#043A43;
+  --escala-navy:#1D212F;
+  --gray-0:#FFFFFF; --gray-25:#FBFBFB; --gray-50:#F8F8F8; --gray-100:#F2F2F2;
+  --gray-150:#EDEDED; --gray-200:#E5E5E5; --gray-300:#D9D9D9; --gray-400:#AEAEAE;
+  --gray-500:#8A8A8A; --gray-600:#494949; --gray-700:#0B0B0B; --gray-900:#000000;
+  --fg-1:var(--gray-900); --fg-2:var(--gray-700); --fg-3:var(--gray-500);
+  --bg-page:var(--gray-25); --bg-card:var(--gray-0); --bg-inset:var(--gray-100);
+  --border-subtle:var(--gray-200); --border-default:var(--gray-300);
+  --status-positive:#1F7A4D; --status-positive-bg:#E8F1EC;
+  --status-warning:#B07000;  --status-warning-bg:#FBF1DD;
+  --status-negative:#B5331C; --status-negative-bg:#F7E5E1;
+  --font-sans:"Nimbus Sans L","Nimbus Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-sans);
+  background:var(--bg-page);
+  color:var(--fg-2);
+  font-size:14px;
+  line-height:1.45;
+  font-variant-numeric:tabular-nums;
+}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px 72px}
+a{color:var(--escala-orange);text-decoration:none}
+
+/* ---------- Encabezado ---------- */
+header{border-bottom:1px solid var(--border-subtle);background:var(--bg-card)}
+.header-inner{max-width:880px;margin:0 auto;padding:20px 24px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-weight:700;letter-spacing:.18em;font-size:15px;color:var(--fg-1)}
+.logo span{color:var(--escala-orange)}
+.header-meta{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3)}
+
+.hero{padding:48px 0 40px;border-bottom:1px solid var(--border-subtle)}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--escala-orange);font-weight:700;margin-bottom:12px}
+h1{font-size:34px;line-height:1.1;letter-spacing:-0.02em;color:var(--fg-1);font-weight:700;max-width:640px}
+.lede{font-size:18px;line-height:1.45;color:var(--gray-600);margin-top:16px;max-width:640px;font-weight:300}
+
+/* ---------- Secciones ---------- */
+section{padding:40px 0;border-bottom:1px solid var(--border-subtle)}
+.sec-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);font-weight:700;margin-bottom:8px}
+h2{font-size:24px;letter-spacing:-0.01em;color:var(--fg-1);font-weight:700;margin-bottom:16px}
+h3{font-size:16px;color:var(--fg-1);font-weight:700;margin-bottom:8px}
+p{margin-bottom:12px;max-width:680px}
+p:last-child{margin-bottom:0}
+
+/* ---------- Regla en tres frases ---------- */
+.rule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-default);border:1px solid var(--border-default);border-radius:8px;overflow:hidden;margin-top:20px}
+.rule-cell{background:var(--bg-card);padding:20px}
+.rule-num{font-size:26px;font-weight:700;color:var(--escala-orange);margin-bottom:8px}
+.rule-cell strong{display:block;color:var(--fg-1);margin-bottom:6px;font-size:14px}
+.rule-cell p{font-size:13px;color:var(--gray-600);margin:0}
+
+/* ---------- Tarjetas KPI ---------- */
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.kpi-card{background:var(--bg-card);border:1px solid var(--border-default);border-radius:8px;padding:20px}
+.kpi-card .kpi-name{font-size:13px;font-weight:700;color:var(--fg-1)}
+.kpi-card .kpi-min{font-size:30px;font-weight:700;color:var(--fg-1);margin:8px 0 2px}
+.kpi-card .kpi-cap{font-size:12px;color:var(--fg-3)}
+.kpi-card .kpi-w{margin-top:12px;padding-top:12px;border-top:1px solid var(--border-subtle);font-size:12px;color:var(--gray-600)}
+
+/* ---------- Tablas ---------- */
+table{width:100%;border-collapse:collapse;background:var(--bg-card);border:1px solid var(--border-default);border-radius:8px;overflow:hidden;font-size:13px;margin-top:16px}
+thead th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);text-align:left;padding:10px 14px;background:var(--gray-50);border-bottom:1px solid var(--border-default);font-weight:700}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--border-subtle);color:var(--fg-2)}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.total td{font-weight:700;color:var(--fg-1);background:var(--gray-50)}
+tr.zeroed td{color:var(--status-warning)}
+
+/* ---------- Badges ---------- */
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:4px}
+.badge.ok{color:var(--status-positive);background:var(--status-positive-bg)}
+.badge.no{color:var(--status-negative);background:var(--status-negative-bg)}
+.badge.warn{color:var(--status-warning);background:var(--status-warning-bg)}
+
+/* ---------- Callouts ---------- */
+.callout{border:1px solid var(--border-default);border-left:3px solid var(--escala-orange);border-radius:0 8px 8px 0;background:var(--bg-card);padding:16px 20px;margin-top:20px;font-size:13px}
+.callout strong{color:var(--fg-1)}
+.callout.neg{border-left-color:var(--escala-orange)}
+.formula{font-family:var(--font-mono);font-size:12.5px;background:var(--bg-inset);border:1px solid var(--border-subtle);border-radius:6px;padding:12px 16px;margin-top:14px;color:var(--fg-1);overflow-x:auto;white-space:pre}
+
+/* ---------- Cascada (diagrama) ---------- */
+.cascade{margin-top:24px;display:flex;flex-direction:column;gap:0;max-width:560px}
+.cas-step{background:var(--bg-card);border:1px solid var(--border-default);border-radius:8px;padding:16px 20px;position:relative}
+.cas-step .cs-eyebrow{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);font-weight:700;margin-bottom:4px}
+.cas-step strong{color:var(--fg-1);font-size:14px;display:block}
+.cas-step p{font-size:13px;color:var(--gray-600);margin:4px 0 0}
+.cas-arrow{align-self:center;width:1px;height:22px;background:var(--gray-400);position:relative}
+.cas-arrow::after{content:"";position:absolute;bottom:0;left:-4px;border-left:4.5px solid transparent;border-right:4.5px solid transparent;border-top:6px solid var(--gray-400)}
+.cas-step.hit{border-color:var(--status-positive);background:var(--status-positive-bg)}
+.cas-step.hit strong{color:var(--status-positive)}
+
+/* ---------- Simulador ---------- */
+.sim{background:var(--bg-card);border:1px solid var(--border-default);border-radius:8px;margin-top:20px;overflow:hidden}
+.sim-head{padding:16px 20px;border-bottom:1px solid var(--border-subtle);background:var(--gray-50)}
+.sim-head strong{color:var(--fg-1)}
+.sim-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.sim-inputs{padding:20px;border-right:1px solid var(--border-subtle)}
+.sim-results{padding:20px;background:var(--gray-25)}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--fg-1);margin-bottom:6px}
+.field label .val{font-variant-numeric:tabular-nums;color:var(--escala-orange)}
+.field .min-note{font-size:11px;color:var(--fg-3);margin-top:4px}
+input[type=range]{width:100%;accent-color:var(--escala-orange)}
+input[type=number]{width:100%;padding:8px 10px;border:1px solid var(--border-default);border-radius:6px;font-family:var(--font-sans);font-size:13px;color:var(--fg-1);background:var(--bg-card)}
+input[type=number]:focus,input[type=range]:focus{outline:2px solid var(--escala-orange);outline-offset:1px}
+.res-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border-subtle);font-size:13px}
+.res-row:last-child{border-bottom:none}
+.res-row .rr-label{color:var(--gray-600)}
+.res-row .rr-val{font-weight:700;color:var(--fg-1);font-variant-numeric:tabular-nums}
+.res-total{margin-top:12px;padding:14px 16px;border-radius:8px;border:1px solid var(--border-default);background:var(--bg-card)}
+.res-total .rt-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);font-weight:700}
+.res-total .rt-val{font-size:26px;font-weight:700;color:var(--fg-1);margin-top:2px;font-variant-numeric:tabular-nums}
+.res-total.denied{border-color:var(--status-warning);background:var(--status-warning-bg)}
+.res-total.denied .rt-val{color:var(--status-warning)}
+#tot-esc .rt-val{font-size:17px;line-height:1.3;padding-top:4px}
+.sim-note{padding:12px 20px;border-top:1px solid var(--border-subtle);font-size:12px;color:var(--fg-3)}
+
+/* ---------- Quiz ---------- */
+.quiz-item{background:var(--bg-card);border:1px solid var(--border-default);border-radius:8px;padding:20px;margin-top:16px}
+.quiz-q{font-weight:700;color:var(--fg-1);margin-bottom:12px;font-size:14px}
+.quiz-opt{display:block;width:100%;text-align:left;padding:10px 14px;margin-bottom:8px;border:1px solid var(--border-default);border-radius:6px;background:var(--bg-card);font-family:var(--font-sans);font-size:13px;color:var(--fg-2);cursor:pointer}
+.quiz-opt:hover{border-color:var(--gray-400)}
+.quiz-opt:focus-visible{outline:2px solid var(--escala-orange);outline-offset:1px}
+.quiz-opt.correct{border-color:var(--status-positive);background:var(--status-positive-bg);color:var(--status-positive);font-weight:700}
+.quiz-opt.incorrect{border-color:var(--status-warning);background:var(--status-warning-bg);color:var(--status-warning)}
+.quiz-fb{font-size:13px;margin-top:8px;padding:12px 14px;border-radius:6px;display:none}
+.quiz-fb.show{display:block}
+.quiz-fb.good{background:var(--status-positive-bg);color:var(--status-positive)}
+.quiz-fb.bad{background:var(--status-warning-bg);color:var(--status-warning)}
+
+/* ---------- Cierre ---------- */
+.takeaways{margin-top:20px;border:1px solid var(--border-default);border-radius:8px;background:var(--bg-card);overflow:hidden}
+.takeaways li{list-style:none;padding:14px 20px;border-bottom:1px solid var(--border-subtle);font-size:13px;display:flex;gap:12px;align-items:baseline}
+.takeaways li:last-child{border-bottom:none}
+.takeaways li::before{content:"—";color:var(--escala-orange);font-weight:700}
+footer{padding-top:32px;font-size:11px;color:var(--fg-3);letter-spacing:.04em}
+
+@media(max-width:720px){
+  .rule-grid,.kpi-grid{grid-template-columns:1fr}
+  .sim-body{grid-template-columns:1fr}
+  .sim-inputs{border-right:none;border-bottom:1px solid var(--border-subtle)}
+  h1{font-size:28px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">ESC<span>A</span>LA</div>
+    <div class="header-meta">Compensación variable 2026 · Módulo didáctico · Gerentes</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="eyebrow">Grupo 2 · Gerentes · Regla de acceso conjunto</div>
+  <h1>Sus tres KPI cumplidos aseguran todo su bono</h1>
+  <p class="lede">El bono se asegura de manera conjunta: cada KPI que alcanza su mínimo activa su rubro, y los tres juntos abren el acceso completo. Además, su buen resultado anual abre también el acceso al bono de su director.</p>
+</div>
+
+<!-- ============ 1. La regla ============ -->
+<section>
+  <div class="sec-label">01 · La regla</div>
+  <h2>Tres claves para asegurar su bono</h2>
+  <div class="rule-grid">
+    <div class="rule-cell">
+      <div class="rule-num">Mínimo</div>
+      <strong>Cada mínimo activa su rubro</strong>
+      <p>Al alcanzar el mínimo, el rubro se activa y suma de manera proporcional hasta el 100%. El mínimo es la puerta de entrada de cada KPI.</p>
+    </div>
+    <div class="rule-cell">
+      <div class="rule-num">3 de 3</div>
+      <strong>Los tres juntos abren el bono</strong>
+      <p>El acceso al bono individual se asegura cumpliendo los tres KPI de manera conjunta. Cada rubro cumplido lo acerca al acceso completo.</p>
+    </div>
+    <div class="rule-cell">
+      <div class="rule-num">Cascada</div>
+      <strong>Su resultado también abre el bono de su director</strong>
+      <p>Al cerrar el año con 80% o más en Integratec, usted asegura su parte del objetivo Evaluación de Gerentes de su director.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. Los KPI del gerente ============ -->
+<section>
+  <div class="sec-label">02 · Grupo 2 · Gerentes</div>
+  <h2>Los tres KPI y sus mínimos</h2>
+  <p>Cada KPI pondera 33% de la calificación. Entre el mínimo y el 100%, el cálculo es proporcional: el resultado alcanzado se multiplica por 33%.</p>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-name">Satisfacción del cliente</div>
+      <div class="kpi-min">85%</div>
+      <div class="kpi-cap">mínimo de acceso</div>
+      <div class="kpi-w">Ponderación 33% · proporcional de 85% a 100%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-name">Cobranza</div>
+      <div class="kpi-min">95%</div>
+      <div class="kpi-cap">mínimo de acceso</div>
+      <div class="kpi-w">Ponderación 33% · proporcional de 95% a 100%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-name">Auditorías internas</div>
+      <div class="kpi-min">85%</div>
+      <div class="kpi-cap">mínimo de acceso</div>
+      <div class="kpi-w">Ponderación 33% · proporcional de 85% a 100%</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Bolsas del Grupo 2.</strong> Bono individual de hasta 2 meses de sueldo base y Bono ESCALA de hasta 1 mes, ambos multiplicados por la calificación de objetivos. El Bono ESCALA además requiere el cumplimiento de la meta de EBITDA 2026 ($30.8 mdp sin considerar bonos) y no puede superar la bolsa de distribución del director asignado.
+  </div>
+  <h3 style="margin-top:28px">Las fórmulas, rubro por rubro</h3>
+  <p>El cálculo de cada rubro sigue exactamente la misma estructura. Primero se verifica el mínimo; solo si se alcanza, el resultado entra a la fórmula proporcional.</p>
+  <div class="formula">Si Resultado ≥ Mínimo:   Aporte del rubro = Resultado × 33%  (rubro activado)
+Si Resultado &lt; Mínimo:   Aporte del rubro = 0  (el rubro se activa al alcanzar el mínimo)
+
+Calificación = Aporte satisfacción + Aporte cobranza + Aporte auditorías
+               (se asegura al activar los tres rubros)
+
+Bono individual = Sueldo base × 2 × Calificación
+Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBITDA*</div>
+  <p style="margin-top:12px;font-size:12px;color:var(--fg-3)">*El Bono ESCALA se activa cuando ESCALA alcanza al menos el 85% de su meta de EBITDA; entre 85% y 100% la bolsa crece de manera proporcional. Se detalla más adelante.</p>
+  <table>
+    <thead>
+      <tr><th>Resultado en el KPI</th><th class="num">Ejemplo (mínimo 85%)</th><th class="num">Aporte al rubro</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>En el tope</td><td class="num">100%</td><td class="num">33.0%</td><td><span class="badge ok">Rubro asegurado al máximo</span></td></tr>
+      <tr><td>Por encima del mínimo</td><td class="num">92%</td><td class="num">30.4%</td><td><span class="badge ok">Rubro activado</span></td></tr>
+      <tr><td>Exactamente en el mínimo</td><td class="num">85%</td><td class="num">28.1%</td><td><span class="badge ok">Rubro activado</span></td></tr>
+      <tr class="zeroed"><td>Un punto por debajo del mínimo</td><td class="num">84%</td><td class="num">0%</td><td><span class="badge warn">A 1 punto de activarse</span></td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <strong>El mínimo es la puerta de entrada.</strong> Alcanzar el 85% activa de inmediato más del 28% del rubro; cada punto adicional suma hasta el tope de 33%. Entre "activado" y "por activar" hay un solo punto de diferencia: por eso el seguimiento del avance de cada KPI durante el año le permite asegurar cada rubro a tiempo, cuando todavía hay margen de acción.
+  </div>
+</section>
+
+<!-- ============ 3. Ejemplo que cumple ============ -->
+<section>
+  <div class="sec-label">03 · Ejemplo A</div>
+  <h2>Gerente que cumple los tres mínimos</h2>
+  <p>Gerente con sueldo base mensual de $60,000 (cifra ilustrativa). Sus tres KPI superan el mínimo, por lo que accede al bono y cada rubro aporta de manera proporcional.</p>
+  <table>
+    <thead>
+      <tr><th>KPI</th><th class="num">Resultado</th><th class="num">Mínimo</th><th>Acceso</th><th class="num">Cálculo</th><th class="num">Aporte</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Satisfacción del cliente</td><td class="num">92%</td><td class="num">85%</td><td><span class="badge ok">Activado</span></td><td class="num">92% × 33%</td><td class="num">30.4%</td></tr>
+      <tr><td>Cobranza</td><td class="num">97%</td><td class="num">95%</td><td><span class="badge ok">Activado</span></td><td class="num">97% × 33%</td><td class="num">32.0%</td></tr>
+      <tr><td>Auditorías internas</td><td class="num">88%</td><td class="num">85%</td><td><span class="badge ok">Activado</span></td><td class="num">88% × 33%</td><td class="num">29.0%</td></tr>
+      <tr class="total"><td colspan="5">Calificación de objetivos</td><td class="num">91.4%</td></tr>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr><th>Concepto</th><th class="num">Base</th><th class="num">Calificación</th><th class="num">Monto</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Bono individual (hasta 2 meses)</td><td class="num">$120,000</td><td class="num">91.4%</td><td class="num">$109,680</td></tr>
+      <tr><td>Bono ESCALA (hasta 1 mes)*</td><td class="num">$60,000</td><td class="num">91.4%</td><td class="num">$54,840</td></tr>
+      <tr class="total"><td colspan="3">Bono total estimado</td><td class="num">$164,520</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <strong>*Supuesto del ejemplo.</strong> El Bono ESCALA asume cumplimiento del 100% de la meta de EBITDA. La bolsa se activa a partir del 85% de la meta y crece de manera proporcional hasta el 100%.
+  </div>
+</section>
+
+<!-- ============ 4. Ejemplo B: el valor de cada punto ============ -->
+<section>
+  <div class="sec-label">04 · Ejemplo B</div>
+  <h2>El valor de cada punto: a dos puntos de asegurar todo</h2>
+  <p>Mismo sueldo, resultados casi idénticos. Cobranza cierra en 93%, a dos puntos de su mínimo de 95%: recuperar esos dos puntos durante el año asegura el bono completo.</p>
+  <table>
+    <thead>
+      <tr><th>KPI</th><th class="num">Resultado</th><th class="num">Mínimo</th><th>Estado</th><th class="num">Aporte</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Satisfacción del cliente</td><td class="num">95%</td><td class="num">85%</td><td><span class="badge ok">Activado</span></td><td class="num">—</td></tr>
+      <tr class="zeroed"><td>Cobranza</td><td class="num">93%</td><td class="num">95%</td><td><span class="badge warn">A 2 puntos de activarse</span></td><td class="num">0% hasta alcanzar el mínimo</td></tr>
+      <tr><td>Auditorías internas</td><td class="num">90%</td><td class="num">85%</td><td><span class="badge ok">Activado</span></td><td class="num">—</td></tr>
+      <tr class="total"><td colspan="4">Acceso al bono individual</td><td class="num">Se asegura al activar los tres rubros</td></tr>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr><th>Concepto</th><th class="num">Con cobranza en 95% o más</th><th class="num">Con cobranza en 93%</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Bono individual</td><td class="num">$109,680 asegurados</td><td class="num">$0 · pendiente de activar</td></tr>
+      <tr><td>Bono ESCALA</td><td class="num">$54,840 asegurados</td><td class="num">Sujeto a aprobación del Consejo</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <strong>El valor de dos puntos.</strong> En este ejemplo, llevar la cobranza de 93% a 95% asegura un bono estimado de $164,520. Ningún esfuerzo del año rinde tanto como cerrar la brecha del KPI que está más cerca de su mínimo: el acceso es conjunto, y activar el rubro pendiente convierte los otros dos en dinero.
+  </div>
+</section>
+
+<!-- ============ 5. La meta de ESCALA ============ -->
+<section>
+  <div class="sec-label">05 · Meta institucional</div>
+  <h2>La meta de ESCALA multiplica su esfuerzo</h2>
+  <p>El Bono ESCALA suma un componente adicional a su bono cuando la empresa alcanza su meta de EBITDA 2026: $30.8 mdp sin considerar bonos. La bolsa se activa a partir del 85% de la meta y crece de manera proporcional hasta el 100%.</p>
+  <table>
+    <thead>
+      <tr><th>Cumplimiento de la meta</th><th class="num">EBITDA (mdp)</th><th>Bolsa del Bono ESCALA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>100%</td><td class="num">$30.8</td><td><span class="badge ok">Asegurada completa</span></td></tr>
+      <tr><td>95%</td><td class="num">$29.3</td><td><span class="badge ok">Activada · proporcional al 95%</span></td></tr>
+      <tr><td>90%</td><td class="num">$27.7</td><td><span class="badge ok">Activada · proporcional al 90%</span></td></tr>
+      <tr><td>85% (punto de activación)</td><td class="num">$26.2</td><td><span class="badge ok">Activada · proporcional al 85%</span></td></tr>
+      <tr class="zeroed"><td>Menos de 85%</td><td class="num">&lt; $26.2</td><td><span class="badge warn">Se activa a partir del 85%</span></td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <strong>Dos logros que se suman.</strong> Cumplir sus tres KPI asegura su acceso; que ESCALA llegue a su meta activa la bolsa institucional. Su bono individual se asegura con sus propios resultados, independientemente del EBITDA, y el Bono ESCALA se suma encima cuando toda la organización alcanza la meta. Su cobranza y la satisfacción de sus clientes contribuyen directamente a ese resultado colectivo.
+  </div>
+</section>
+
+<!-- ============ 6. Su impacto en el director ============ -->
+<section>
+  <div class="sec-label">06 · Cascada</div>
+  <h2>Su buen resultado también abre el bono de su director</h2>
+  <p>Además de sus tres KPI, usted tiene una evaluación de desempeño mensual en Integratec. Su calificación anual alimenta el objetivo Evaluación de Gerentes de su director, que se activa con un mínimo aprobatorio de 80%.</p>
+  <div class="cascade">
+    <div class="cas-step hit">
+      <div class="cs-eyebrow">Su aporte</div>
+      <strong>Usted registra su evaluación cada mes y cierra el año en 80% o más</strong>
+      <p>Cada registro mensual suma a su calificación anual. Un registro constante es la forma más segura de llegar al mínimo con holgura.</p>
+    </div>
+    <div class="cas-arrow"></div>
+    <div class="cas-step hit">
+      <div class="cs-eyebrow">El resultado</div>
+      <strong>El objetivo Evaluación de Gerentes de su director se calcula con el promedio del equipo</strong>
+      <p>Cuando todo el equipo cierra en 80% o más, el objetivo se activa y aporta hasta 33% de la calificación del director, quien con ello asegura el acceso a su bono individual.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Dos vías, una misma lógica de logro.</strong> Sus tres KPI (satisfacción, cobranza, auditorías) aseguran su propio bono. Su evaluación de desempeño en Integratec (mínimo anual de 80%) asegura su parte del objetivo de su director: el objetivo se activa cuando cada gerente del equipo alcanza el mínimo, por lo que su resultado individual cuenta siempre, sea cual sea el promedio del resto. El detalle del cálculo del director se cubre en el módulo del Grupo 1.
+  </div>
+</section>
+
+<!-- ============ 6. Simulador ============ -->
+<section>
+  <div class="sec-label">07 · Simulador</div>
+  <h2>Pruebe los escenarios</h2>
+  <p>Mueva los resultados y observe cómo cada rubro se activa al alcanzar su mínimo, cómo los tres activados aseguran el bono completo y cómo la meta de ESCALA suma el Bono ESCALA.</p>
+
+  <div class="sim">
+    <div class="sim-head"><strong>Bono del gerente</strong></div>
+    <div class="sim-body">
+      <div class="sim-inputs">
+        <div class="field">
+          <label for="sueldo">Sueldo base mensual (MXN)</label>
+          <input type="number" id="sueldo" value="60000" min="1" step="1000">
+        </div>
+        <div class="field">
+          <label for="k1">Satisfacción del cliente <span class="val" id="v1">92%</span></label>
+          <input type="range" id="k1" min="70" max="100" value="92">
+          <div class="min-note">Mínimo 85%</div>
+        </div>
+        <div class="field">
+          <label for="k2">Cobranza <span class="val" id="v2">97%</span></label>
+          <input type="range" id="k2" min="70" max="100" value="97">
+          <div class="min-note">Mínimo 95%</div>
+        </div>
+        <div class="field">
+          <label for="k3">Auditorías internas <span class="val" id="v3">88%</span></label>
+          <input type="range" id="k3" min="70" max="100" value="88">
+          <div class="min-note">Mínimo 85%</div>
+        </div>
+        <div class="field">
+          <label for="ebitda">Cumplimiento de la meta EBITDA de ESCALA <span class="val" id="vebitda">100%</span></label>
+          <input type="range" id="ebitda" min="70" max="100" value="100">
+          <div class="min-note">Meta 2026: $30.8 mdp · la bolsa ESCALA se genera a partir de 85%, proporcional hasta 100%</div>
+        </div>
+      </div>
+      <div class="sim-results">
+        <div class="res-row"><span class="rr-label">Satisfacción</span><span class="rr-val" id="r1">—</span></div>
+        <div class="res-row"><span class="rr-label">Cobranza</span><span class="rr-val" id="r2">—</span></div>
+        <div class="res-row"><span class="rr-label">Auditorías</span><span class="rr-val" id="r3">—</span></div>
+        <div class="res-row"><span class="rr-label">Calificación de objetivos</span><span class="rr-val" id="rcal">—</span></div>
+        <div class="res-total" id="tot-ind">
+          <div class="rt-label">Bono individual (hasta 2 meses)</div>
+          <div class="rt-val" id="monto-ind">—</div>
+        </div>
+        <div class="res-total" id="tot-esc" style="margin-top:10px">
+          <div class="rt-label">Bono ESCALA (hasta 1 mes)</div>
+          <div class="rt-val" id="monto-esc">—</div>
+        </div>
+      </div>
+    </div>
+    <div class="sim-note">Supuestos: bolsa del director suficiente y factor de EBITDA aplicado de forma proporcional directa. Cifras ilustrativas para fines didácticos; el cálculo oficial lo valida Administración.</div>
+  </div>
+
+  <div class="sim">
+    <div class="sim-head"><strong>Su evaluación en Integratec y el acceso de su director</strong></div>
+    <div class="sim-body">
+      <div class="sim-inputs">
+        <div class="field">
+          <label for="evalmin">Su evaluación anual de desempeño en Integratec <span class="val" id="vev">86%</span></label>
+          <input type="range" id="evalmin" min="60" max="100" value="86">
+          <div class="min-note">Mínimo aprobatorio anual 80%</div>
+        </div>
+      </div>
+      <div class="sim-results">
+        <div class="res-row"><span class="rr-label">Objetivo Evaluación de Gerentes de su director</span><span class="rr-val" id="rdir1">—</span></div>
+        <div class="res-total" id="tot-dir">
+          <div class="rt-label">Acceso de su director al bono individual</div>
+          <div class="rt-val" id="rdir2">—</div>
+        </div>
+      </div>
+    </div>
+    <div class="sim-note">Supone que los demás objetivos del director sí se cumplen: el efecto mostrado proviene únicamente de su evaluación anual.</div>
+  </div>
+</section>
+
+<!-- ============ 8. Condiciones de acceso ============ -->
+<section>
+  <div class="sec-label">08 · Condiciones de acceso</div>
+  <h2>Requisitos para recibir el pago</h2>
+  <p>Dos condiciones administrativas completan el acceso al pago.</p>
+  <table>
+    <thead>
+      <tr><th>Condición</th><th>Regla para el Grupo 2</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Antigüedad mínima</td><td>6 meses de antigüedad en el puesto durante el ejercicio evaluado</td></tr>
+      <tr><td>Vigencia laboral</td><td>Estar activo en la empresa al momento del pago (marzo de 2027)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 9. Verificación ============ -->
+<section>
+  <div class="sec-label">09 · Verificación</div>
+  <h2>Compruebe su comprensión</h2>
+
+  <div class="quiz-item" data-correct="1">
+    <div class="quiz-q">1. Un gerente cierra con satisfacción 96%, auditorías 91% y cobranza 94%. ¿Accede a su bono individual?</div>
+    <button class="quiz-opt" data-i="0">Sí, porque su promedio general supera el 90%</button>
+    <button class="quiz-opt" data-i="1">Todavía no: el bono se asegura cuando cobranza también alcanza su mínimo de 95%</button>
+    <button class="quiz-opt" data-i="2">Sí, pero solo por los dos rubros cumplidos</button>
+    <div class="quiz-fb"></div>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <div class="quiz-q">2. Usted cierra el año con 78% de evaluación en Integratec. El resto del equipo promedia 92%. ¿Qué ocurre con su director?</div>
+    <button class="quiz-opt" data-i="0">Nada, porque el promedio del equipo supera el mínimo</button>
+    <button class="quiz-opt" data-i="1">Se le descuenta proporcionalmente el rubro</button>
+    <button class="quiz-opt" data-i="2">El objetivo se activa solo cuando cada gerente alcanza 80%; con 78%, el objetivo completo queda pendiente y su director aún no accede a su bono individual</button>
+    <div class="quiz-fb"></div>
+  </div>
+
+  <div class="quiz-item" data-correct="1">
+    <div class="quiz-q">3. Un gerente no registra su evaluación mensual en Integratec. ¿Cuál es el resultado de ese periodo?</div>
+    <button class="quiz-opt" data-i="0">Se toma el promedio de los meses anteriores</button>
+    <button class="quiz-opt" data-i="1">Cero; cada registro realizado, en cambio, suma a su calificación anual</button>
+    <button class="quiz-opt" data-i="2">Queda pendiente hasta que se registre</button>
+    <div class="quiz-fb"></div>
+  </div>  <div class="quiz-item" data-correct="2">
+    <div class="quiz-q">4. Usted cumple sus tres KPI con una calificación de 92%, pero ESCALA cierra el año en 82% de su meta de EBITDA. ¿Qué recibe?</div>
+    <button class="quiz-opt" data-i="0">Su bono individual y su Bono ESCALA completos</button>
+    <button class="quiz-opt" data-i="1">Nada, porque la meta de la empresa no se alcanzó</button>
+    <button class="quiz-opt" data-i="2">Su bono individual asegurado; el Bono ESCALA se activa en los ejercicios en que la empresa alcanza al menos el 85% de la meta</button>
+    <div class="quiz-fb"></div>
+  </div>
+</section>
+
+<!-- ============ 10. Puntos clave ============ -->
+<section style="border-bottom:none">
+  <div class="sec-label">10 · Puntos clave</div>
+  <h2>Lo que debe recordar</h2>
+  <ul class="takeaways">
+    <li>Su bono se asegura de manera conjunta: cada KPI que alcanza su mínimo activa su rubro, y los tres activados abren el acceso completo.</li>
+    <li>Los puntos de activación del Grupo 2 son: satisfacción del cliente 85%, cobranza 95% y auditorías internas 85%. Alcanzar el mínimo activa de inmediato la mayor parte del rubro.</li>
+    <li>El Bono ESCALA se suma cuando ocurren dos logros: sus tres KPI activados y ESCALA en al menos el 85% de su meta de EBITDA ($30.8 mdp). Su trabajo diario contribuye a ambos.</li>
+    <li>Al cerrar el año con 80% o más en Integratec, usted asegura su parte del objetivo de su director y contribuye a que él también acceda a su bono.</li>
+    <li>Registrar su evaluación mensual en Integratec suma cada periodo a su calificación anual: la constancia es la vía más segura al mínimo.</li>
+    <li>El pago se asegura con 6 meses de antigüedad mínima y permaneciendo activo en la empresa en marzo de 2027.</li>
+  </ul>
+  <footer>ESCALA · Política de compensación variable 2026 v3 · Material didáctico interno. Las cifras de los ejemplos son ilustrativas; los cálculos oficiales los valida Administración y los autoriza Dirección General.</footer>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var MINS = [85, 95, 85];
+  var fmt = function(n){ return "$" + Math.round(n).toLocaleString("es-MX"); };
+
+  function calc(){
+    var sueldo = parseFloat(document.getElementById("sueldo").value) || 0;
+    var e = parseInt(document.getElementById("ebitda").value, 10);
+    document.getElementById("vebitda").textContent = e + "%";
+    var ok = true;
+    var suma = 0;
+    for (var i = 1; i <= 3; i++){
+      var v = parseInt(document.getElementById("k" + i).value, 10);
+      document.getElementById("v" + i).textContent = v + "%";
+      var cell = document.getElementById("r" + i);
+      if (v >= MINS[i - 1]){
+        var aporte = v * 0.33;
+        suma += aporte;
+        cell.textContent = aporte.toFixed(1) + "% · activado";
+        cell.style.color = "";
+      } else {
+        ok = false;
+        cell.textContent = "Se activa en " + MINS[i - 1] + "%";
+        cell.style.color = "var(--status-warning)";
+      }
+    }
+    var rcal = document.getElementById("rcal");
+    var totInd = document.getElementById("tot-ind");
+    var totEsc = document.getElementById("tot-esc");
+    var mInd = document.getElementById("monto-ind");
+    var mEsc = document.getElementById("monto-esc");
+    if (ok){
+      var cal = suma / 100;
+      rcal.textContent = suma.toFixed(1) + "%";
+      rcal.style.color = "";
+      totInd.classList.remove("denied");
+      mInd.textContent = fmt(sueldo * 2 * cal) + " asegurados";
+    } else {
+      rcal.textContent = "Se asegura al activar los tres rubros";
+      rcal.style.color = "var(--status-warning)";
+      totInd.classList.add("denied");
+      mInd.textContent = "Por activar";
+    }
+    if (e < 85){
+      totEsc.classList.add("denied");
+      mEsc.textContent = "Se activa con la meta al 85%";
+    } else if (ok){
+      totEsc.classList.remove("denied");
+      mEsc.textContent = fmt(sueldo * 1 * (suma / 100) * (e / 100)) + " asegurados";
+    } else {
+      totEsc.classList.add("denied");
+      mEsc.textContent = "Sujeto a aprobación del Consejo";
+    }
+  }
+
+  function calcDir(){
+    var v = parseInt(document.getElementById("evalmin").value, 10);
+    document.getElementById("vev").textContent = v + "%";
+    var r1 = document.getElementById("rdir1");
+    var r2 = document.getElementById("rdir2");
+    var tot = document.getElementById("tot-dir");
+    if (v >= 80){
+      r1.textContent = "Activado con su aporte";
+      r1.style.color = "var(--status-positive)";
+      r2.textContent = "Asegurado";
+      tot.classList.remove("denied");
+    } else {
+      r1.textContent = "Se activa cuando usted llega a 80%";
+      r1.style.color = "var(--status-warning)";
+      r2.textContent = "A " + (80 - v) + " punto" + (80 - v === 1 ? "" : "s") + " de asegurarse";
+      tot.classList.add("denied");
+    }
+  }
+
+  ["sueldo","k1","k2","k3","ebitda"].forEach(function(id){
+    document.getElementById(id).addEventListener("input", calc);
+  });
+  document.getElementById("evalmin").addEventListener("input", calcDir);
+  calc();
+  calcDir();
+
+  document.querySelectorAll(".quiz-item").forEach(function(item){
+    var correct = parseInt(item.getAttribute("data-correct"), 10);
+    var fb = item.querySelector(".quiz-fb");
+    var msgs = {
+      good: "Correcto. El bono se asegura activando los tres rubros de manera conjunta: cada mínimo alcanzado cuenta.",
+      bad: "Aún no. Recuerde la clave: cada rubro se activa al alcanzar su mínimo, y los tres activados de manera conjunta aseguran el bono completo."
+    };
+    item.querySelectorAll(".quiz-opt").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        item.querySelectorAll(".quiz-opt").forEach(function(b){
+          b.classList.remove("correct","incorrect");
+          b.disabled = true;
+        });
+        var i = parseInt(btn.getAttribute("data-i"), 10);
+        if (i === correct){
+          btn.classList.add("correct");
+          fb.textContent = msgs.good;
+          fb.className = "quiz-fb show good";
+        } else {
+          btn.classList.add("incorrect");
+          item.querySelector('[data-i="' + correct + '"]').classList.add("correct");
+          fb.textContent = msgs.bad;
+          fb.className = "quiz-fb show bad";
+        }
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
