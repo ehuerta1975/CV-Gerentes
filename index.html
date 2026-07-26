@@ -205,25 +205,25 @@ footer{padding-top:32px;font-size:11px;color:var(--fg-3);letter-spacing:.04em}
 <section>
   <div class="sec-label">02 · Grupo 2 · Gerentes</div>
   <h2>Los tres KPI y sus mínimos</h2>
-  <p>Cada KPI pondera 33% de la calificación. Entre el mínimo y el 100%, el cálculo es proporcional: el resultado alcanzado se multiplica por 33%.</p>
+  <p>Cada KPI pondera 33.3% de la calificación. Entre el mínimo y el 100%, el cálculo es proporcional: el resultado alcanzado se multiplica por 33.3%.</p>
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-name">Satisfacción del cliente</div>
       <div class="kpi-min">85%</div>
       <div class="kpi-cap">mínimo de acceso</div>
-      <div class="kpi-w">Ponderación 33% · proporcional de 85% a 100%</div>
+      <div class="kpi-w">Ponderación 33.3% · proporcional de 85% a 100%</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-name">Cobranza</div>
       <div class="kpi-min">95%</div>
       <div class="kpi-cap">mínimo de acceso</div>
-      <div class="kpi-w">Ponderación 33% · proporcional de 95% a 100%</div>
+      <div class="kpi-w">Ponderación 33.3% · proporcional de 95% a 100%</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-name">Auditorías internas</div>
       <div class="kpi-min">85%</div>
       <div class="kpi-cap">mínimo de acceso</div>
-      <div class="kpi-w">Ponderación 33% · proporcional de 85% a 100%</div>
+      <div class="kpi-w">Ponderación 33.3% · proporcional de 85% a 100%</div>
     </div>
   </div>
   <div class="callout">
@@ -231,7 +231,7 @@ footer{padding-top:32px;font-size:11px;color:var(--fg-3);letter-spacing:.04em}
   </div>
   <h3 style="margin-top:28px">Las fórmulas, rubro por rubro</h3>
   <p>El cálculo de cada rubro sigue exactamente la misma estructura. Primero se verifica el mínimo; solo si se alcanza, el resultado entra a la fórmula proporcional.</p>
-  <div class="formula">Si Resultado ≥ Mínimo:   Aporte del rubro = Resultado × 33%  (rubro activado)
+  <div class="formula">Si Resultado ≥ Mínimo:   Aporte del rubro = Resultado × 33.3%  (rubro activado)
 Si Resultado &lt; Mínimo:   Aporte del rubro = 0  (el rubro se activa al alcanzar el mínimo)
 
 Calificación = Aporte satisfacción + Aporte cobranza + Aporte auditorías
@@ -245,14 +245,14 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
       <tr><th>Resultado en el KPI</th><th class="num">Ejemplo (mínimo 85%)</th><th class="num">Aporte al rubro</th><th>Estado</th></tr>
     </thead>
     <tbody>
-      <tr><td>En el tope</td><td class="num">100%</td><td class="num">33.0%</td><td><span class="badge ok">Rubro asegurado al máximo</span></td></tr>
-      <tr><td>Por encima del mínimo</td><td class="num">92%</td><td class="num">30.4%</td><td><span class="badge ok">Rubro activado</span></td></tr>
-      <tr><td>Exactamente en el mínimo</td><td class="num">85%</td><td class="num">28.1%</td><td><span class="badge ok">Rubro activado</span></td></tr>
+      <tr><td>En el tope</td><td class="num">100%</td><td class="num">33.3%</td><td><span class="badge ok">Rubro asegurado al máximo</span></td></tr>
+      <tr><td>Por encima del mínimo</td><td class="num">92%</td><td class="num">30.7%</td><td><span class="badge ok">Rubro activado</span></td></tr>
+      <tr><td>Exactamente en el mínimo</td><td class="num">85%</td><td class="num">28.3%</td><td><span class="badge ok">Rubro activado</span></td></tr>
       <tr class="zeroed"><td>Un punto por debajo del mínimo</td><td class="num">84%</td><td class="num">0%</td><td><span class="badge warn">A 1 punto de activarse</span></td></tr>
     </tbody>
   </table>
   <div class="callout">
-    <strong>El mínimo es la puerta de entrada.</strong> Alcanzar el 85% activa de inmediato más del 28% del rubro; cada punto adicional suma hasta el tope de 33%. Entre "activado" y "por activar" hay un solo punto de diferencia: por eso el seguimiento del avance de cada KPI durante el año le permite asegurar cada rubro a tiempo, cuando todavía hay margen de acción.
+    <strong>El mínimo es la puerta de entrada.</strong> Alcanzar el 85% activa de inmediato más del 28% del rubro; cada punto adicional suma hasta el tope de 33.3%. Entre "activado" y "por activar" hay un solo punto de diferencia: por eso el seguimiento del avance de cada KPI durante el año le permite asegurar cada rubro a tiempo, cuando todavía hay margen de acción.
   </div>
 </section>
 
@@ -266,10 +266,10 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
       <tr><th>KPI</th><th class="num">Resultado</th><th class="num">Mínimo</th><th>Acceso</th><th class="num">Cálculo</th><th class="num">Aporte</th></tr>
     </thead>
     <tbody>
-      <tr><td>Satisfacción del cliente</td><td class="num">92%</td><td class="num">85%</td><td><span class="badge ok">Activado</span></td><td class="num">92% × 33%</td><td class="num">30.4%</td></tr>
-      <tr><td>Cobranza</td><td class="num">97%</td><td class="num">95%</td><td><span class="badge ok">Activado</span></td><td class="num">97% × 33%</td><td class="num">32.0%</td></tr>
-      <tr><td>Auditorías internas</td><td class="num">88%</td><td class="num">85%</td><td><span class="badge ok">Activado</span></td><td class="num">88% × 33%</td><td class="num">29.0%</td></tr>
-      <tr class="total"><td colspan="5">Calificación de objetivos</td><td class="num">91.4%</td></tr>
+      <tr><td>Satisfacción del cliente</td><td class="num">92%</td><td class="num">85%</td><td><span class="badge ok">Activado</span></td><td class="num">92% × 33.3%</td><td class="num">30.7%</td></tr>
+      <tr><td>Cobranza</td><td class="num">97%</td><td class="num">95%</td><td><span class="badge ok">Activado</span></td><td class="num">97% × 33.3%</td><td class="num">32.3%</td></tr>
+      <tr><td>Auditorías internas</td><td class="num">88%</td><td class="num">85%</td><td><span class="badge ok">Activado</span></td><td class="num">88% × 33.3%</td><td class="num">29.3%</td></tr>
+      <tr class="total"><td colspan="5">Calificación de objetivos</td><td class="num">92.3%</td></tr>
     </tbody>
   </table>
   <table>
@@ -277,9 +277,9 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
       <tr><th>Concepto</th><th class="num">Base</th><th class="num">Calificación</th><th class="num">Monto</th></tr>
     </thead>
     <tbody>
-      <tr><td>Bono individual (hasta 2 meses)</td><td class="num">$120,000</td><td class="num">91.4%</td><td class="num">$109,680</td></tr>
-      <tr><td>Bono ESCALA (hasta 1 mes)*</td><td class="num">$60,000</td><td class="num">91.4%</td><td class="num">$54,840</td></tr>
-      <tr class="total"><td colspan="3">Bono total estimado</td><td class="num">$164,520</td></tr>
+      <tr><td>Bono individual (hasta 2 meses)</td><td class="num">$120,000</td><td class="num">92.3%</td><td class="num">$110,800</td></tr>
+      <tr><td>Bono ESCALA (hasta 1 mes)*</td><td class="num">$60,000</td><td class="num">92.3%</td><td class="num">$55,400</td></tr>
+      <tr class="total"><td colspan="3">Bono total estimado</td><td class="num">$166,200</td></tr>
     </tbody>
   </table>
   <div class="callout">
@@ -308,12 +308,12 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
       <tr><th>Concepto</th><th class="num">Con cobranza en 95% o más</th><th class="num">Con cobranza en 93%</th></tr>
     </thead>
     <tbody>
-      <tr><td>Bono individual</td><td class="num">$109,680 asegurados</td><td class="num">$0 · pendiente de activar</td></tr>
-      <tr><td>Bono ESCALA</td><td class="num">$54,840 asegurados</td><td class="num">Sujeto a aprobación del Consejo</td></tr>
+      <tr><td>Bono individual</td><td class="num">$110,800 asegurados</td><td class="num">$0 · pendiente de activar</td></tr>
+      <tr><td>Bono ESCALA</td><td class="num">$55,400 asegurados</td><td class="num">Sujeto a aprobación del Consejo</td></tr>
     </tbody>
   </table>
   <div class="callout">
-    <strong>El valor de dos puntos.</strong> En este ejemplo, llevar la cobranza de 93% a 95% asegura un bono estimado de $164,520. Ningún esfuerzo del año rinde tanto como cerrar la brecha del KPI que está más cerca de su mínimo: el acceso es conjunto, y activar el rubro pendiente convierte los otros dos en dinero.
+    <strong>El valor de dos puntos.</strong> En este ejemplo, llevar la cobranza de 93% a 95% asegura un bono estimado de $166,200. Ningún esfuerzo del año rinde tanto como cerrar la brecha del KPI que está más cerca de su mínimo: el acceso es conjunto, y activar el rubro pendiente convierte los otros dos en dinero.
   </div>
 </section>
 
@@ -374,7 +374,7 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
       <div class="sim-inputs">
         <div class="field">
           <label for="sueldo">Sueldo base mensual (MXN)</label>
-          <input type="number" id="sueldo" value="60000" min="1" step="1000">
+          <input type="text" id="sueldo" inputmode="numeric" value="60,000">
         </div>
         <div class="field">
           <label for="k1">Satisfacción del cliente <span class="val" id="v1">92%</span></label>
@@ -396,6 +396,11 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
           <input type="range" id="ebitda" min="70" max="100" value="100">
           <div class="min-note">Meta 2026: $30.8 mdp · la bolsa ESCALA se genera a partir de 85%, proporcional hasta 100%</div>
         </div>
+        <div class="field">
+          <label for="meses">Meses trabajados en ESCALA durante 2026 <span class="val" id="vmeses">12</span></label>
+          <input type="range" id="meses" min="1" max="12" value="12">
+          <div class="min-note">El bono es proporcional a los meses trabajados · el acceso se asegura a partir de 6 meses de antigüedad</div>
+        </div>
       </div>
       <div class="sim-results">
         <div class="res-row"><span class="rr-label">Satisfacción</span><span class="rr-val" id="r1">—</span></div>
@@ -412,28 +417,7 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
         </div>
       </div>
     </div>
-    <div class="sim-note">Supuestos: bolsa del director suficiente y factor de EBITDA aplicado de forma proporcional directa. Cifras ilustrativas para fines didácticos; el cálculo oficial lo valida Administración.</div>
-  </div>
-
-  <div class="sim">
-    <div class="sim-head"><strong>Su evaluación en Integratec y el acceso de su director</strong></div>
-    <div class="sim-body">
-      <div class="sim-inputs">
-        <div class="field">
-          <label for="evalmin">Su evaluación anual de desempeño en Integratec <span class="val" id="vev">86%</span></label>
-          <input type="range" id="evalmin" min="60" max="100" value="86">
-          <div class="min-note">Mínimo aprobatorio anual 80%</div>
-        </div>
-      </div>
-      <div class="sim-results">
-        <div class="res-row"><span class="rr-label">Objetivo Evaluación de Gerentes de su director</span><span class="rr-val" id="rdir1">—</span></div>
-        <div class="res-total" id="tot-dir">
-          <div class="rt-label">Acceso de su director al bono individual</div>
-          <div class="rt-val" id="rdir2">—</div>
-        </div>
-      </div>
-    </div>
-    <div class="sim-note">Supone que los demás objetivos del director sí se cumplen: el efecto mostrado proviene únicamente de su evaluación anual.</div>
+    <div class="sim-note">Supuestos: bolsa del director suficiente, factor de EBITDA aplicado de forma proporcional directa y proporcionalidad simple por meses trabajados. Cifras ilustrativas para fines didácticos; el cálculo oficial lo valida Administración.</div>
   </div>
 </section>
 
@@ -441,14 +425,15 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
 <section>
   <div class="sec-label">08 · Condiciones de acceso</div>
   <h2>Requisitos para recibir el pago</h2>
-  <p>Dos condiciones administrativas completan el acceso al pago.</p>
+  <p>Dos condiciones administrativas y una regla de proporcionalidad completan el acceso al pago.</p>
   <table>
     <thead>
       <tr><th>Condición</th><th>Regla para el Grupo 2</th></tr>
     </thead>
     <tbody>
       <tr><td>Antigüedad mínima</td><td>6 meses de antigüedad en el puesto durante el ejercicio evaluado</td></tr>
-      <tr><td>Vigencia laboral</td><td>Estar activo en la empresa al momento del pago (marzo de 2027)</td></tr>
+      <tr><td>Vigencia laboral</td><td>Estar activo en ESCALA en la fecha de pago: 31 de marzo de 2027</td></tr>
+      <tr><td>Proporcionalidad</td><td>El bono se calcula proporcional a los meses trabajados en ESCALA durante el ejercicio 2026; un año completo asegura el monto íntegro</td></tr>
     </tbody>
   </table>
 </section>
@@ -499,7 +484,7 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
     <li>El Bono ESCALA se suma cuando ocurren dos logros: sus tres KPI activados y ESCALA en al menos el 85% de su meta de EBITDA ($30.8 mdp). Su trabajo diario contribuye a ambos.</li>
     <li>Al cerrar el año con 80% o más en Integratec, usted asegura su parte del objetivo de su director y contribuye a que él también acceda a su bono.</li>
     <li>Registrar su evaluación mensual en Integratec suma cada periodo a su calificación anual: la constancia es la vía más segura al mínimo.</li>
-    <li>El pago se asegura con 6 meses de antigüedad mínima y permaneciendo activo en la empresa en marzo de 2027.</li>
+    <li>El pago se asegura con 6 meses de antigüedad mínima y permaneciendo activo en ESCALA en la fecha de pago, 31 de marzo de 2027; el monto es proporcional a los meses trabajados durante 2026.</li>
   </ul>
   <footer>ESCALA · Política de compensación variable 2026 v3 · Material didáctico interno. Las cifras de los ejemplos son ilustrativas; los cálculos oficiales los valida Administración y los autoriza Dirección General.</footer>
 </section>
@@ -512,9 +497,14 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
   var fmt = function(n){ return "$" + Math.round(n).toLocaleString("es-MX"); };
 
   function calc(){
-    var sueldo = parseFloat(document.getElementById("sueldo").value) || 0;
+    var sueldoEl = document.getElementById("sueldo");
+    var sueldo = parseFloat(sueldoEl.value.replace(/[^0-9]/g, "")) || 0;
+    sueldoEl.value = sueldo ? sueldo.toLocaleString("es-MX") : "";
     var e = parseInt(document.getElementById("ebitda").value, 10);
+    var meses = parseInt(document.getElementById("meses").value, 10);
     document.getElementById("vebitda").textContent = e + "%";
+    document.getElementById("vmeses").textContent = meses;
+    var fMeses = meses / 12;
     var ok = true;
     var suma = 0;
     for (var i = 1; i <= 3; i++){
@@ -522,7 +512,7 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
       document.getElementById("v" + i).textContent = v + "%";
       var cell = document.getElementById("r" + i);
       if (v >= MINS[i - 1]){
-        var aporte = v * 0.33;
+        var aporte = v / 3;
         suma += aporte;
         cell.textContent = aporte.toFixed(1) + "% · activado";
         cell.style.color = "";
@@ -537,55 +527,45 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
     var totEsc = document.getElementById("tot-esc");
     var mInd = document.getElementById("monto-ind");
     var mEsc = document.getElementById("monto-esc");
-    if (ok){
+    if (meses < 6){
+      rcal.textContent = ok ? suma.toFixed(1) + "%" : "Se asegura al activar los tres rubros";
+      rcal.style.color = ok ? "" : "var(--status-warning)";
+      totInd.classList.add("denied");
+      totEsc.classList.add("denied");
+      mInd.textContent = "Se asegura a partir de 6 meses de antigüedad";
+      mEsc.textContent = "Se asegura a partir de 6 meses de antigüedad";
+    } else if (ok){
       var cal = suma / 100;
       rcal.textContent = suma.toFixed(1) + "%";
       rcal.style.color = "";
       totInd.classList.remove("denied");
-      mInd.textContent = fmt(sueldo * 2 * cal) + " asegurados";
+      mInd.textContent = fmt(sueldo * 2 * cal * fMeses) + " asegurados" + (meses < 12 ? " (" + meses + "/12)" : "");
+      if (e < 85){
+        totEsc.classList.add("denied");
+        mEsc.textContent = "Se activa con la meta al 85%";
+      } else {
+        totEsc.classList.remove("denied");
+        mEsc.textContent = fmt(sueldo * 1 * cal * (e / 100) * fMeses) + " asegurados" + (meses < 12 ? " (" + meses + "/12)" : "");
+      }
     } else {
       rcal.textContent = "Se asegura al activar los tres rubros";
       rcal.style.color = "var(--status-warning)";
       totInd.classList.add("denied");
       mInd.textContent = "Por activar";
-    }
-    if (e < 85){
-      totEsc.classList.add("denied");
-      mEsc.textContent = "Se activa con la meta al 85%";
-    } else if (ok){
-      totEsc.classList.remove("denied");
-      mEsc.textContent = fmt(sueldo * 1 * (suma / 100) * (e / 100)) + " asegurados";
-    } else {
-      totEsc.classList.add("denied");
-      mEsc.textContent = "Sujeto a aprobación del Consejo";
+      if (e < 85){
+        totEsc.classList.add("denied");
+        mEsc.textContent = "Se activa con la meta al 85%";
+      } else {
+        totEsc.classList.add("denied");
+        mEsc.textContent = "Sujeto a aprobación del Consejo";
+      }
     }
   }
 
-  function calcDir(){
-    var v = parseInt(document.getElementById("evalmin").value, 10);
-    document.getElementById("vev").textContent = v + "%";
-    var r1 = document.getElementById("rdir1");
-    var r2 = document.getElementById("rdir2");
-    var tot = document.getElementById("tot-dir");
-    if (v >= 80){
-      r1.textContent = "Activado con su aporte";
-      r1.style.color = "var(--status-positive)";
-      r2.textContent = "Asegurado";
-      tot.classList.remove("denied");
-    } else {
-      r1.textContent = "Se activa cuando usted llega a 80%";
-      r1.style.color = "var(--status-warning)";
-      r2.textContent = "A " + (80 - v) + " punto" + (80 - v === 1 ? "" : "s") + " de asegurarse";
-      tot.classList.add("denied");
-    }
-  }
-
-  ["sueldo","k1","k2","k3","ebitda"].forEach(function(id){
+  ["sueldo","k1","k2","k3","ebitda","meses"].forEach(function(id){
     document.getElementById(id).addEventListener("input", calc);
   });
-  document.getElementById("evalmin").addEventListener("input", calcDir);
   calc();
-  calcDir();
 
   document.querySelectorAll(".quiz-item").forEach(function(item){
     var correct = parseInt(item.getAttribute("data-correct"), 10);
