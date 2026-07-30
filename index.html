@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Efecto cascada del bono — Gerentes (Grupo 2) — Compensación variable 2026</title>
 <style>
+/* ---------- Fuente de marca (handoff-diseno-escala) ---------- */
+@font-face{font-family:"Nimbus Sans DOT";src:url("fonts/NimbusSansDOT-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Nimbus Sans DOT";src:url("fonts/NimbusSansDOT-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
 /* ============================================================
    ESCALA — tokens (colors_and_type.css, subset autocontenido)
    ============================================================ */
@@ -24,6 +27,7 @@
   --status-warning:#B07000;  --status-warning-bg:#FBF1DD;
   --status-negative:#B5331C; --status-negative-bg:#F7E5E1;
   --font-sans:"Nimbus Sans L","Nimbus Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-light:"Nimbus Sans DOT","Nimbus Sans L","Helvetica Neue",Helvetica,Arial,sans-serif;
   --font-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -42,14 +46,13 @@ a{color:var(--escala-orange);text-decoration:none}
 /* ---------- Encabezado ---------- */
 header{border-bottom:1px solid var(--border-subtle);background:var(--bg-card)}
 .header-inner{max-width:880px;margin:0 auto;padding:20px 24px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.logo{font-weight:700;letter-spacing:.18em;font-size:15px;color:var(--fg-1)}
-.logo span{color:var(--escala-orange)}
+.logo-img{height:14px;width:auto}
 .header-meta{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3)}
 
 .hero{padding:48px 0 40px;border-bottom:1px solid var(--border-subtle)}
 .eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--escala-orange);font-weight:700;margin-bottom:12px}
-h1{font-size:34px;line-height:1.1;letter-spacing:-0.02em;color:var(--fg-1);font-weight:700;max-width:640px}
-.lede{font-size:18px;line-height:1.45;color:var(--gray-600);margin-top:16px;max-width:640px;font-weight:300}
+h1{font-size:38px;line-height:1.1;letter-spacing:-0.02em;color:var(--fg-1);font-weight:700;max-width:680px}
+.lede{font-family:var(--font-light);font-size:20px;line-height:1.45;color:var(--gray-600);margin-top:16px;max-width:680px;font-weight:300}
 
 /* ---------- Secciones ---------- */
 section{padding:40px 0;border-bottom:1px solid var(--border-subtle)}
@@ -156,7 +159,7 @@ footer{padding-top:32px;font-size:11px;color:var(--fg-3);letter-spacing:.04em}
   .rule-grid,.kpi-grid{grid-template-columns:1fr}
   .sim-body{grid-template-columns:1fr}
   .sim-inputs{border-right:none;border-bottom:1px solid var(--border-subtle)}
-  h1{font-size:28px}
+  h1{font-size:26px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none !important}}
 </style>
@@ -165,7 +168,7 @@ footer{padding-top:32px;font-size:11px;color:var(--fg-3);letter-spacing:.04em}
 
 <header>
   <div class="header-inner">
-    <div class="logo">ESC<span>A</span>LA</div>
+    <img class="logo-img" src="brand/wordmark-black.png" alt="ESCALA" height="14" style="display:block">
     <div class="header-meta">Compensación variable 2026 · Módulo didáctico · Gerentes</div>
   </div>
 </header>
@@ -195,8 +198,8 @@ footer{padding-top:32px;font-size:11px;color:var(--fg-3);letter-spacing:.04em}
     </div>
     <div class="rule-cell">
       <div class="rule-num">Cascada</div>
-      <strong>Su resultado también abre el bono de su director</strong>
-      <p>Al cerrar el año con 80% o más en Integratec, usted asegura su parte del objetivo Evaluación de Gerentes de su director.</p>
+      <strong>Sus KPI también alimentan el bono de su director</strong>
+      <p>Sus resultados anuales alimentan el objetivo Evaluación de Gerentes de su director: sostener sus KPI durante el año asegura su parte de ese objetivo.</p>
     </div>
   </div>
 </section>
@@ -226,6 +229,10 @@ footer{padding-top:32px;font-size:11px;color:var(--fg-3);letter-spacing:.04em}
       <div class="kpi-w">Ponderación 33.3% · proporcional de 85% a 100%</div>
     </div>
   </div>
+  <h3 style="margin-top:28px">Qué mide cada KPI</h3>
+  <p><strong style="color:var(--fg-1)">Satisfacción del cliente (semestral).</strong> Encuesta estructurada y ponderada en escala de 0 a 100 que mide, cada semestre, la percepción del cliente sobre el servicio recibido en su proyecto. Su propósito es reconocer las fortalezas del servicio, impulsar la mejora continua y consolidar la confianza y lealtad del cliente. Antes de cada evaluación, el Director de Desarrollo de Negocio concilia con cada director de proyecto la lista de clientes a encuestar. Promover la participación de todos los clientes considerados forma parte del servicio: las encuestas que no se completan se registran con calificación de cero, por lo que asegurar la respuesta de cada cliente protege su resultado.</p>
+  <p><strong style="color:var(--fg-1)">Cobranza (mensual).</strong> Medición mensual del cumplimiento de pago de los clientes respecto a los plazos de crédito pactados en cada contrato. Cada factura emitida se registra como cumplida cuando el pago se recibe dentro del plazo, con una tolerancia de hasta 15 días naturales de gracia, o como no cumplida cuando se recibe después. Su objeto es dar seguimiento a la puntualidad de pago por proyecto, identificar cuentas vencidas a tiempo y asegurar la salud financiera de la operación.</p>
+  <p><strong style="color:var(--fg-1)">Auditorías internas (por fase).</strong> Revisiones sistemáticas e independientes de la Oficina de Administración de Proyectos (OAP) al ACC de cada proyecto, para verificar su cumplimiento con los estándares y entregables definidos en cada fase. Su objeto es identificar desviaciones, emitir hallazgos y asegurar la mejora continua antes del cierre de la fase.</p>
   <div class="callout">
     <strong>Bolsas del Grupo 2.</strong> Bono individual de hasta 2 meses de sueldo base y Bono ESCALA de hasta 1 mes, ambos multiplicados por la calificación de objetivos. El Bono ESCALA además requiere el cumplimiento de la meta de EBITDA 2026 ($30.8 mdp sin considerar bonos) y no puede superar la bolsa de distribución del director asignado.
   </div>
@@ -342,23 +349,23 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
 <!-- ============ 6. Su impacto en el director ============ -->
 <section>
   <div class="sec-label">06 · Cascada</div>
-  <h2>Su buen resultado también abre el bono de su director</h2>
-  <p>Además de sus tres KPI, usted tiene una evaluación de desempeño mensual en Integratec. Su calificación anual alimenta el objetivo Evaluación de Gerentes de su director, que se activa con un mínimo aprobatorio de 80%.</p>
+  <h2>Sus mismos KPI también alimentan el bono de su director</h2>
+  <p>El objetivo Evaluación de Gerentes de su director se calcula con los resultados anuales de estos mismos tres KPI. Para usted la regla no cambia y no tiene matices: si el promedio anual de un KPI queda por debajo de su mínimo (satisfacción 85%, cobranza 95%, auditorías 85%), ese rubro se vuelve cero y su bono individual no se activa; los rubros cumplidos no lo compensan. Los criterios con los que su director evalúa su objetivo se cubren en el módulo del Grupo 1.</p>
   <div class="cascade">
     <div class="cas-step hit">
       <div class="cs-eyebrow">Su aporte</div>
-      <strong>Usted registra su evaluación cada mes y cierra el año en 80% o más</strong>
-      <p>Cada registro mensual suma a su calificación anual. Un registro constante es la forma más segura de llegar al mínimo con holgura.</p>
+      <strong>Usted sostiene sus tres KPI durante el año</strong>
+      <p>La encuesta semestral de satisfacción, la cobranza mensual y las auditorías por fase construyen su promedio anual. La constancia en cada medición es lo que protege el resultado de cierre.</p>
     </div>
     <div class="cas-arrow"></div>
     <div class="cas-step hit">
       <div class="cs-eyebrow">El resultado</div>
-      <strong>El objetivo Evaluación de Gerentes de su director se calcula con el promedio del equipo</strong>
-      <p>Cuando todo el equipo cierra en 80% o más, el objetivo se activa y aporta hasta 33% de la calificación del director, quien con ello asegura el acceso a su bono individual.</p>
+      <strong>El objetivo Evaluación de Gerentes de su director se alimenta de sus resultados</strong>
+      <p>Cuando el equipo entrega buenos resultados, el objetivo aporta hasta 33.3% de la calificación del director, quien con ello asegura el acceso a su bono individual.</p>
     </div>
   </div>
   <div class="callout">
-    <strong>Dos vías, una misma lógica de logro.</strong> Sus tres KPI (satisfacción, cobranza, auditorías) aseguran su propio bono. Su evaluación de desempeño en Integratec (mínimo anual de 80%) asegura su parte del objetivo de su director: el objetivo se activa cuando cada gerente del equipo alcanza el mínimo, por lo que su resultado individual cuenta siempre, sea cual sea el promedio del resto. El detalle del cálculo del director se cubre en el módulo del Grupo 1.
+    <strong>Una misma medición, dos efectos.</strong> Sus KPI activan su propio bono al alcanzar sus mínimos y, al mismo tiempo, alimentan el objetivo de su director. Cada punto sostenido durante el año trabaja para ambos.
   </div>
 </section>
 
@@ -451,19 +458,19 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
     <div class="quiz-fb"></div>
   </div>
 
-  <div class="quiz-item" data-correct="2">
-    <div class="quiz-q">2. Usted cierra el año con 78% de evaluación en Integratec. El resto del equipo promedia 92%. ¿Qué ocurre con su director?</div>
-    <button class="quiz-opt" data-i="0">Nada, porque el promedio del equipo supera el mínimo</button>
-    <button class="quiz-opt" data-i="1">Se le descuenta proporcionalmente el rubro</button>
-    <button class="quiz-opt" data-i="2">El objetivo se activa solo cuando cada gerente alcanza 80%; con 78%, el objetivo completo queda pendiente y su director aún no accede a su bono individual</button>
+  <div class="quiz-item" data-correct="1">
+    <div class="quiz-q">2. El promedio anual de uno de sus KPI cierra un punto por debajo de su mínimo. ¿Qué ocurre con ese rubro?</div>
+    <button class="quiz-opt" data-i="0">Aporta de manera proporcional a lo alcanzado</button>
+    <button class="quiz-opt" data-i="1">Se vuelve cero y el bono individual no se activa; los otros dos rubros no lo compensan</button>
+    <button class="quiz-opt" data-i="2">Se redondea al mínimo si la diferencia es menor a dos puntos</button>
     <div class="quiz-fb"></div>
   </div>
 
   <div class="quiz-item" data-correct="1">
-    <div class="quiz-q">3. Un gerente no registra su evaluación mensual en Integratec. ¿Cuál es el resultado de ese periodo?</div>
-    <button class="quiz-opt" data-i="0">Se toma el promedio de los meses anteriores</button>
-    <button class="quiz-opt" data-i="1">Cero; cada registro realizado, en cambio, suma a su calificación anual</button>
-    <button class="quiz-opt" data-i="2">Queda pendiente hasta que se registre</button>
+    <div class="quiz-q">3. Un cliente considerado en la lista semestral no completa su encuesta de satisfacción. ¿Cómo se registra?</div>
+    <button class="quiz-opt" data-i="0">Se excluye del promedio del semestre</button>
+    <button class="quiz-opt" data-i="1">Con calificación de cero; por eso promover la participación de cada cliente forma parte del servicio</button>
+    <button class="quiz-opt" data-i="2">Se toma la calificación de la encuesta anterior</button>
     <div class="quiz-fb"></div>
   </div>  <div class="quiz-item" data-correct="2">
     <div class="quiz-q">4. Usted cumple sus tres KPI con una calificación de 92%, pero ESCALA cierra el año en 82% de su meta de EBITDA. ¿Qué recibe?</div>
@@ -482,8 +489,8 @@ Bono ESCALA     = Sueldo base × 1 × Calificación × Cumplimiento de meta EBIT
     <li>Su bono se asegura de manera conjunta: cada KPI que alcanza su mínimo activa su rubro, y los tres activados abren el acceso completo.</li>
     <li>Los puntos de activación del Grupo 2 son: satisfacción del cliente 85%, cobranza 95% y auditorías internas 85%. Alcanzar el mínimo activa de inmediato la mayor parte del rubro.</li>
     <li>El Bono ESCALA se suma cuando ocurren dos logros: sus tres KPI activados y ESCALA en al menos el 85% de su meta de EBITDA ($30.8 mdp). Su trabajo diario contribuye a ambos.</li>
-    <li>Al cerrar el año con 80% o más en Integratec, usted asegura su parte del objetivo de su director y contribuye a que él también acceda a su bono.</li>
-    <li>Registrar su evaluación mensual en Integratec suma cada periodo a su calificación anual: la constancia es la vía más segura al mínimo.</li>
+    <li>Sus mismos KPI alimentan el objetivo Evaluación de Gerentes de su director: sostener sus resultados durante el año asegura su bono y contribuye al de él.</li>
+    <li>Las encuestas de satisfacción que no se completan se registran con cero: asegurar la respuesta de cada cliente considerado protege su resultado semestral.</li>
     <li>El pago se asegura con 6 meses de antigüedad mínima y permaneciendo activo en ESCALA en la fecha de pago, 31 de marzo de 2027; el monto es proporcional a los meses trabajados durante 2026.</li>
   </ul>
   <footer>ESCALA · Política de compensación variable 2026 v3 · Material didáctico interno. Las cifras de los ejemplos son ilustrativas; los cálculos oficiales los valida Administración y los autoriza Dirección General.</footer>
